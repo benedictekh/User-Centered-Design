@@ -5,11 +5,12 @@ import Searchbar from './Searchbar';
 
 export default function ListScreen() {
     return (
+        // <View>
         <ScrollView>
-        <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center' }}> 
+        <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center' }}> 
         <Searchbar />
         <ShopsList />
-      </View>
+        </View>
       </ScrollView>
     );
   }

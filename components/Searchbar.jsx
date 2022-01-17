@@ -4,7 +4,6 @@ import { StyleSheet, TextInput, View, Image } from 'react-native';
 export default function Searchbar() {
     let image_path = require('../assets/search.png');
   return (
-    <View>
      <View style={styles.searchfield}>
      <Image source={image_path} style={{width:20, height:20, marginTop: -3}}/>
       <TextInput
@@ -15,7 +14,6 @@ export default function Searchbar() {
       > 
       </TextInput>
     </View>
-  </View>
   );
 }
 
@@ -25,14 +23,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: "center",
         margin: 5,
-        marginLeft: 10,
+        // marginLeft: 10,
         borderWidth: 1,
         padding: 12,
-        paddingLeft: 20,
-        paddingRight: 20,
+        // paddingLeft: 20,
+        // paddingRight: 20,
         borderRadius: 20,
         borderColor: '#888888',
         height: 40,
+        width: "90%"
     },
     formField: {
         width: "70%",
