@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ProfileScreen from './ProfileScreen';
-import HomeScreen from './HomeScreen';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ProfileScreen from "../pages/ProfileScreen";
+import HomeScreen from "../pages/HomeScreen";
 
 const Tab = createBottomTabNavigator();
 
