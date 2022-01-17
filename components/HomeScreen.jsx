@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
+import {TrashcansList, ShopsList} from './List';
 
 export default function HomeScreen() {
     return (
