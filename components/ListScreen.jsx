@@ -5,11 +5,13 @@ import {TrashcansList, ShopsList} from './List';
 import Searchbar from './Searchbar';
 
 export default function ListScreen() {
-    let image_path_filter = require('../assets/filter.png')
-    let image_path_map = require('../assets/map.png')
+    let image_path_filter = require('../assets/filter.png');
+    let image_path_map = require('../assets/map.png');
+    let image_path_map_trashcans = require('../assets/map_trashcans.png');
+    let image_path_map_shops = require('../assets/map_shops.png');
 
     const [trashcanStatus, setTrashcanStatus] = useState(false);
-
+    const [showList, setShowList] = useState(true);
 
     return (
         <ScrollView>
@@ -17,7 +19,6 @@ export default function ListScreen() {
                 <Image 
                     source={image_path_filter} 
                     style={{width:40, height:40, marginLeft: 15}}
-                    onPress={() => console.log('pressed filter')}
                 ></Image>
                 <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'center'}}>
                     <Button
@@ -58,12 +59,27 @@ export default function ListScreen() {
                 <Image 
                     source={image_path_map} 
                     style={{width:40, height:40, marginRight: 20}}
-                    onPress={() => console.log('pressed map')}
+                    onPress={() => setShowList(!showList)}
                 ></Image>
             </View>
             <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center' }}> 
                 <Searchbar />
-                <ShopsList />
+                {showList?
+                    !trashcanStatus ? <TrashcansList /> : <ShopsList />
+                    :
+                    !trashcanStatus ? 
+                    <Image 
+                    source={image_path_map_trashcans} 
+                    style={{width:300, height:300, marginRight: 20}}
+                    onPress={() => console.log('pressed map')}
+                    ></Image> 
+                    : 
+                    <Image 
+                    source={image_path_map_shops} 
+                    style={{width:300, height:300, marginRight: 20}}
+                    onPress={() => console.log('pressed map')}
+                    ></Image>
+                }
             </View>
         </ScrollView>
     );
