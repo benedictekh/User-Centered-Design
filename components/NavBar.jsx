@@ -5,18 +5,57 @@ import ProfileScreen from "../pages/ProfileScreen";
 import HomeScreen from "../pages/HomeScreen";
 import HelpScreen from "../pages/HelpScreen";
 
-//import QrCode2RoundedIcon from "@mui/icons-material/QrCode2Rounded";
-//import FormatListBulletedRoundedIcon from "@mui/icons-material/FormatListBulletedRounded";
-//import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
+// icons: https://oblador.github.io/react-native-vector-icons/
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
-      <Tab.Screen name="Help" component={HelpScreen} />
+      <Tab.Screen
+        name="QR"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "QR",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="qrcode" color={color} size={size} />
+          ),
+        }}
+      ></Tab.Screen>
+      <Tab.Screen
+        name="List"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "List",
+          tabBarIcon: ({ color, size }) => (
+            <SimpleLineIcons name="location-pin" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Help"
+        component={HelpScreen}
+        options={{
+          tabBarLabel: "Help",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="help" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
