@@ -88,7 +88,7 @@ export function TrashcansList() {
         <ScrollView style={styles.container}>
         {trashcans.map((item, i) => {
             return(
-                <Card>
+                <Card key={i}>
                     <View>
                     <Card.Title style={styles.title}>{item.adress}</Card.Title>
                     <Text>{item.distance}</Text>
