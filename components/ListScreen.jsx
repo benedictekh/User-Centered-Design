@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Button, Image } from 'react-native-elements';
+// import FilterComponent from '../assets/FilterComponent';
 import {TrashcansList, ShopsList} from './List';
 import Searchbar from './Searchbar';
 
@@ -16,6 +17,7 @@ export default function ListScreen() {
     return (
         <ScrollView>
             <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'space-around', marginTop: 10, marginBottom: 10}}>
+                {/* <FilterComponent></FilterComponent> */}
                 <Image 
                     source={image_path_filter} 
                     style={{width:40, height:40, marginLeft: 15}}
