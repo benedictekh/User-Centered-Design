@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Avatar, Card, Button, Badge } from "react-native-elements";
+import { Avatar, Card, Button } from "react-native-elements";
 
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
@@ -22,7 +22,11 @@ const PersonalInfo = () => {
         <Text style={styles.aboutText}>Phone: +351 000 0000 000</Text>
         <Text style={styles.aboutText}>email: joana@mail.pt</Text>
 
-        <Button title={"Edit Profile"} style={styles.profileButtons}></Button>
+        <Button
+          title={"Edit Profile"}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
+        ></Button>
 
         <Card.Divider style={styles.dividerStyle} />
         <Text style={styles.tokenText}>Tokens</Text>
@@ -32,12 +36,17 @@ const PersonalInfo = () => {
         </View>
         <Button
           title={"Transaction History"}
-          style={styles.profileButtons}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
         ></Button>
 
         <Card.Divider styles={styles.dividerStyle} />
         <Text style={styles.otherText}>Want your personal DupmIt card?</Text>
-        <Button title={"Order Card"} style={styles.profileButtons}></Button>
+        <Button
+          title={"Order Card"}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
+        ></Button>
       </Card>
     </View>
   );
@@ -53,11 +62,16 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   profileButtons: {
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "white",
-    color: "black",
-    borderColor: "black",
     marginBottom: 5,
     marginTop: 5,
+    borderColor: "black",
+    borderWidth: 1,
+  },
+  buttonTitle: {
+    color: "black",
   },
   aboutText: {
     textAlign: "center",
@@ -81,6 +95,7 @@ const styles = StyleSheet.create({
   tokenText: {
     fontSize: 30,
     marginLeft: 10,
+    marginBottom: 15,
   },
 });
 
