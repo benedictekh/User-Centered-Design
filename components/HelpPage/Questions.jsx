@@ -6,7 +6,7 @@ const Questions = () => {
   return (
     <View>
       <Card>
-        <Text style={styles.questionStyle}>Where can I spend my token?</Text>
+        <Text style={styles.questionStyle}>Where can I spend my tokens?</Text>
 
         <Text style={styles.answerStyle}>
           In the list or map page, there's an option called 'shops' where you
@@ -40,8 +40,6 @@ const Questions = () => {
           map version of the available trashcans. Check your current location
           and where the nearest available trashcan is!
         </Text>
-
-        <Card.Divider style={styles.dividerStyle}></Card.Divider>
       </Card>
     </View>
   );
@@ -53,16 +51,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontFamily: "Open Sans",
     fontSize: 20,
-    backgroundColor: "red",
+    marginBottom: 5,
   },
   answerStyle: {
-    marginBottom: 10,
-    marginTop: 10,
     color: "#3c3c43",
   },
   dividerStyle: {
-    marginBottom: 20,
-    marginTop: 20,
+    marginBottom: 10,
+    marginTop: 10,
+  },
+  cardStyle: {
+    width: 400,
   },
 });
 
