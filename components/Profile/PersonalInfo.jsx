@@ -9,12 +9,14 @@ const PersonalInfo = () => {
     <View style={styles.avatar}>
       <Card style={styles.profileCardStyle}>
         <Card.Title style={styles.aboutText}>Joana Alves</Card.Title>
-        <Avatar
-          title=""
-          size="xlarge"
-          rounded={true}
-          source={{ uri: "https://randomuser.me/api/portraits/" }}
-        ></Avatar>
+        <View style={styles.avatarView}>
+          <Avatar
+            title=""
+            size="xlarge"
+            rounded={true}
+            source={{ uri: "https://randomuser.me/api/portraits/" }}
+          ></Avatar>
+        </View>
 
         <Text style={styles.aboutText}>NIF: 99999</Text>
         <Text style={styles.aboutText}>Address: Av. Rovisco Pais 1,</Text>
@@ -55,7 +57,7 @@ const PersonalInfo = () => {
 //styling
 const styles = StyleSheet.create({
   profileCardStyle: {
-    backgroundColor: "red",
+    width=400
   },
   dividerStyle: {
     marginBottom: 10,
@@ -81,9 +83,10 @@ const styles = StyleSheet.create({
   otherText: {
     fontSize: 16,
   },
-  avatar: {
+  avatarView: {
+    flexDirection: "row",
     justifyContent: "center",
-    width: 400,
+    marginBottom: 30,
   },
   tokenIcon: {},
   tokenView: {
