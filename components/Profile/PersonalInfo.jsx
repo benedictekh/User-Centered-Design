@@ -4,6 +4,8 @@ import { Avatar, Card, Button } from "react-native-elements";
 
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
+import { getAllShops } from "../../service/allApiCalls";
+
 const PersonalInfo = () => {
   return (
     <View style={styles.avatar}>

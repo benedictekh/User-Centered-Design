@@ -38,7 +38,7 @@ export const getHistoryShops = async () => {
  * Get trash transaction history
  * @returns trash transaction history for user 1
  */
-export const getHistoryShops = async () => {
+export const getHistoryTrashcans = async () => {
   //If more users, the user id could be sent as a variable
   return api.get(`user/1/trashCanTransactions`).then((response) => {
     return response.data;
