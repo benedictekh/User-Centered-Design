@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { Button, Image } from 'react-native-elements';
-// import FilterComponent from '../assets/FilterComponent';
 import {TrashcansList, ShopsList} from './List';
 import Searchbar from './Searchbar';
+import Feather from 'react-native-vector-icons/Feather';
+
 
 export default function ListScreen() {
-    let image_path_filter = require('../assets/filter.png');
-    let image_path_map = require('../assets/map.png');
     let image_path_map_trashcans = require('../assets/map_trashcans.png');
     let image_path_map_shops = require('../assets/map_shops.png');
 
@@ -17,25 +16,25 @@ export default function ListScreen() {
     return (
         <ScrollView>
             <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'space-around', marginTop: 10, marginBottom: 10}}>
-                {/* <FilterComponent></FilterComponent> */}
-                <Image 
-                    source={image_path_filter} 
-                    style={{width:40, height:40, marginLeft: 15}}
-                ></Image>
+                <Feather 
+                    name="filter" 
+                    style={{width:40, height:40, marginLeft: 20, paddingTop: 4}} 
+                    size={32}
+                ></Feather>
                 <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'center'}}>
                     <Button
                         title={'Trashcans'}
                         buttonStyle={
                             !trashcanStatus ? 
-                            {backgroundColor: 'black', borderRadius: 3}
+                            {backgroundColor: 'black', borderRadius: 3, height: 35}
                             : 
-                            {backgroundColor: 'white', borderRadius: 3, borderColor: 'black'}
+                            {backgroundColor: 'white', borderRadius: 3, borderColor: 'black', height: 35}
                         }
                         titleStyle={
                             !trashcanStatus ? 
-                            {color: "white"}
+                            {color: "white", fontSize: 15, textAlign: 'center'}
                             : 
-                            {color: "black"}
+                            {color: "black", fontSize: 15, textAlign: 'center'}
                         }
                         containerStyle={{width: 100}}
                         onPress={() => setTrashcanStatus(false)}
@@ -44,25 +43,36 @@ export default function ListScreen() {
                         title={'Shops'}
                         buttonStyle={
                             trashcanStatus ? 
-                            {backgroundColor: 'black', borderRadius: 3}
+                            {backgroundColor: 'black', borderRadius: 3, height: 35}
                             : 
-                            {backgroundColor: 'white', borderRadius: 3, borderColor: "black"}
+                            {backgroundColor: 'white', borderRadius: 3, borderColor: "black", height: 35}
                         }                        
                         containerStyle={{width: 100}}
                         titleStyle={
                             trashcanStatus ? 
-                            {color: "white"}
+                            {color: "white", fontSize: 15, textAlign: 'center'}
                             : 
-                            {color: "black"}
+                            {color: "black", fontSize: 15, textAlign: 'center'}
                         }                      
                         onPress={() => setTrashcanStatus(true)}
                     ></Button>
                 </View>
-                <Image 
-                    source={image_path_map} 
-                    style={{width:40, height:40, marginRight: 20}}
-                    onPress={() => setShowList(!showList)}
-                ></Image>
+            {showList ?    
+            <Feather 
+                name="map" 
+                style={{width:40, height:40, marginRight: 20, paddingTop: 3}} 
+                size={32} 
+                onPress={() => setShowList(!showList)}
+            ></Feather>
+            :
+            <Feather 
+                name="list"
+                style={{width:40, height:40, marginRight: 20, paddingTop: 3}} 
+                size={36} 
+                onPress={() => setShowList(!showList)}
+            ></Feather>
+            }
+         
             </View>
             <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center' }}> 
                 <Searchbar />
