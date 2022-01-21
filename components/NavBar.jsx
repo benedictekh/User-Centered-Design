@@ -47,7 +47,7 @@ function MyTabs() {
       />
 
       <Tab.Screen
-        name="Help"
+        name="Frequently Asked Questions"
         component={HelpScreen}
         options={{
           tabBarLabel: "Help",

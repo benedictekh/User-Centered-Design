@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView, StyleSheet } from "react-native";
 import Questions from "../components/HelpPage/Questions";
 
 export default function HelpScreen() {

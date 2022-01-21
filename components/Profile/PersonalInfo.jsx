@@ -1,34 +1,56 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Avatar, Card, Button, Badge } from "react-native-elements";
+import { Avatar, Card, Button } from "react-native-elements";
+
+import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
 const PersonalInfo = () => {
   return (
-    <View>
+    <View style={styles.avatar}>
       <Card style={styles.profileCardStyle}>
-        <Card.Title>Joana Alves</Card.Title>
-        <Avatar
-          title=""
-          size="xlarge"
-          rounded={true}
-          source={{ uri: "https://randomuser.me/api/portraits/" }}
-        ></Avatar>
+        <Card.Title style={styles.nameText}>Joana Alves</Card.Title>
+        <View style={styles.avatarView}>
+          <Avatar
+            title=""
+            size="xlarge"
+            rounded={true}
+            //source={{ uri: require("../../assets/Joana.PNG") }}
+            source={{ uri: "https://randomuser.me/api/portraits/women/26.jpg" }}
+          ></Avatar>
+        </View>
+        <View style={styles.aboutTextView}>
+          <Text style={styles.aboutText}>NIF: 99999</Text>
+          <Text style={styles.aboutText}>Address: Av. Rovisco Pais 1,</Text>
+          <Text style={styles.aboutText}>1049-001 Lisboa</Text>
+          <Text style={styles.aboutText}>Phone: +351 000 0000 000</Text>
+          <Text style={styles.aboutText}>email: joana@mail.pt</Text>
+        </View>
 
-        <Text>NIF: 99999</Text>
-        <Text>Address: Av. Rovisco Pais 1, 1049-001 Lisboa</Text>
-        <Text>Phone: +351 000 0000 000</Text>
-        <Text>email: joana@mail.pt</Text>
-
-        <Card.Divider />
-        <Text>Tokens</Text>
         <Button
-          title={"Transaction History"}
-          style={styles.profileButtons}
+          title={"Edit Profile"}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
         ></Button>
 
-        <Card.Divider styles={styles.cardDivider} />
-        <Text>Want your personal DupmIt card?</Text>
-        <Button title={"Order Card"} style={styles.profileButtons}></Button>
+        <Card.Divider style={styles.dividerStyle} />
+        <Text style={styles.tokenText}>Your Tokens</Text>
+        <View style={styles.tokenView}>
+          <FontAwesome5 name="coins" size={60} />
+          <Text style={styles.tokenText}>= 20</Text>
+        </View>
+        <Button
+          title={"Transaction History"}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
+        ></Button>
+
+        <Card.Divider styles={styles.dividerStyle} />
+        <Text style={styles.otherText}>Want your personal DupmIt card?</Text>
+        <Button
+          title={"Order Card"}
+          buttonStyle={styles.profileButtons}
+          titleStyle={styles.buttonTitle}
+        ></Button>
       </Card>
     </View>
   );
@@ -36,15 +58,53 @@ const PersonalInfo = () => {
 
 //styling
 const styles = StyleSheet.create({
-  profileCardStyle: {
-    backgroundColor: "red",
-  },
-  cardDivider: {
-    marginBottom: 10,
+  profileCardStyle: {},
+  dividerStyle: {
+    marginBottom: 15,
     marginTop: 10,
   },
   profileButtons: {
-    color: "white",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
+    marginBottom: 10,
+    marginTop: 5,
+    borderColor: "black",
+    borderWidth: 1,
+    width: 330,
+  },
+  buttonTitle: {
+    color: "black",
+  },
+  aboutText: {
+    textAlign: "center",
+    fontSize: 18,
+    marginBottom: 4,
+  },
+  otherText: {
+    fontSize: 16,
+  },
+  avatarView: {
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 10,
+  },
+  tokenIcon: {},
+  tokenView: {
+    flex: 2,
+    flexDirection: "row",
+    justifyContent: "center",
+    marginBottom: 10,
+  },
+  tokenText: {
+    fontSize: 25,
+    marginLeft: 10,
+    marginBottom: 15,
+    textAlign: "center",
+  },
+  nameText: {
+    fontSize: 27,
+    marginBottom: 2,
   },
 });
 
