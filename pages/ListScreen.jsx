@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Button, Image } from 'react-native-elements';
-import {TrashcansList, ShopsList} from './List';
-import Searchbar from './Searchbar';
+import {TrashcansList, ShopsList} from '../components/List';
+import Searchbar from '../components/Searchbar';
 import Feather from 'react-native-vector-icons/Feather';
 
 

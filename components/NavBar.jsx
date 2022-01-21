@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ListScreen from './ListScreen';
+import ListScreen from '../pages/ListScreen';
 import ProfileScreen from "../pages/ProfileScreen";
 import HomeScreen from "../pages/HomeScreen";
 import HelpScreen from "../pages/HelpScreen";
@@ -28,7 +28,7 @@ function MyTabs() {
       ></Tab.Screen>
       <Tab.Screen
         name="List"
-        component={HomeScreen}
+        component={ListScreen}
         options={{
           tabBarLabel: "List",
           tabBarIcon: ({ color, size }) => (
