@@ -6,6 +6,16 @@ const Questions = () => {
   return (
     <View>
       <Card>
+        <Text style={styles.questionStyle}>How do I earn tokens?</Text>
+
+        <Text style={styles.answerStyle}>
+          You earn tokens by throwing yours or other peoples trash in our smart
+          trashcans. Remember use the qr-scanner at the smart trashcan to
+          register the tokens to your account!
+        </Text>
+
+        <Card.Divider style={styles.dividerStyle}></Card.Divider>
+
         <Text style={styles.questionStyle}>Where can I spend my tokens?</Text>
 
         <Text style={styles.answerStyle}>
@@ -33,6 +43,16 @@ const Questions = () => {
         </Text>
 
         <Card.Divider style={styles.dividerStyle}></Card.Divider>
+        <Text style={styles.questionStyle}>
+          Do I have to spend all my tokens at once?
+        </Text>
+
+        <Text style={styles.answerStyle}>
+          No! You can talk to the cashier in the store, and tell him/her exactly
+          how many of your tokens you want to spend.
+        </Text>
+
+        <Card.Divider style={styles.dividerStyle}></Card.Divider>
         <Text style={styles.questionStyle}>Is there a trashcan nearby?</Text>
 
         <Text style={styles.answerStyle}>
@@ -49,16 +69,16 @@ const Questions = () => {
 const styles = StyleSheet.create({
   questionStyle: {
     fontWeight: "bold",
-    fontFamily: "Open Sans",
     fontSize: 20,
-    marginBottom: 5,
+    marginBottom: 10,
   },
   answerStyle: {
     color: "#3c3c43",
+    fontSize: 16,
   },
   dividerStyle: {
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 20,
+    marginTop: 20,
   },
   cardStyle: {
     width: 400,

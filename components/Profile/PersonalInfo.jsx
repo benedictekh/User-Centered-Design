@@ -31,7 +31,7 @@ const PersonalInfo = () => {
         ></Button>
 
         <Card.Divider style={styles.dividerStyle} />
-        <Text style={styles.tokenText}>Tokens</Text>
+        <Text style={styles.tokenText}>Your Tokens</Text>
         <View style={styles.tokenView}>
           <FontAwesome5 name="coins" size={60} />
           <Text style={styles.tokenText}>= 20</Text>
@@ -56,28 +56,27 @@ const PersonalInfo = () => {
 
 //styling
 const styles = StyleSheet.create({
-  profileCardStyle: {
-    width=400
-  },
+  profileCardStyle: {},
   dividerStyle: {
-    marginBottom: 10,
+    marginBottom: 15,
     marginTop: 10,
   },
   profileButtons: {
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
-    marginBottom: 5,
+    marginBottom: 10,
     marginTop: 5,
     borderColor: "black",
     borderWidth: 1,
+    width: 320,
   },
   buttonTitle: {
     color: "black",
   },
   aboutText: {
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 18,
     marginBottom: 4,
   },
   otherText: {
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
   avatarView: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 30,
+    marginBottom: 20,
   },
   tokenIcon: {},
   tokenView: {
@@ -96,9 +95,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   tokenText: {
-    fontSize: 30,
+    fontSize: 25,
     marginLeft: 10,
     marginBottom: 15,
+    textAlign: "center",
   },
 });
 
