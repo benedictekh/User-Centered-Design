@@ -74,7 +74,7 @@ export default function ListScreen() {
             }
          
             </View>
-            <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center' }}> 
+            <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center', justifyContent: 'center' }}> 
                 <Searchbar />
                 {showList?
                     !trashcanStatus ? <TrashcansList /> : <ShopsList />
@@ -82,13 +82,13 @@ export default function ListScreen() {
                     !trashcanStatus ? 
                     <Image 
                     source={image_path_map_trashcans} 
-                    style={{width:300, height:300, marginRight: 20}}
+                    style={{width:400, height:540, marginRight: 20}}
                     onPress={() => console.log('pressed map')}
                     ></Image> 
                     : 
                     <Image 
                     source={image_path_map_shops} 
-                    style={{width:300, height:300, marginRight: 20}}
+                    style={{width:400, height:540, marginRight: 20}}
                     onPress={() => console.log('pressed map')}
                     ></Image>
                 }
