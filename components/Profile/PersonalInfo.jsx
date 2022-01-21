@@ -8,21 +8,23 @@ const PersonalInfo = () => {
   return (
     <View style={styles.avatar}>
       <Card style={styles.profileCardStyle}>
-        <Card.Title style={styles.aboutText}>Joana Alves</Card.Title>
+        <Card.Title style={styles.nameText}>Joana Alves</Card.Title>
         <View style={styles.avatarView}>
           <Avatar
             title=""
             size="xlarge"
             rounded={true}
-            source={{ uri: "https://randomuser.me/api/portraits/" }}
+            //source={{ uri: require("../../assets/Joana.PNG") }}
+            source={{ uri: "https://randomuser.me/api/portraits/women/26.jpg" }}
           ></Avatar>
         </View>
-
-        <Text style={styles.aboutText}>NIF: 99999</Text>
-        <Text style={styles.aboutText}>Address: Av. Rovisco Pais 1,</Text>
-        <Text style={styles.aboutText}>1049-001 Lisboa</Text>
-        <Text style={styles.aboutText}>Phone: +351 000 0000 000</Text>
-        <Text style={styles.aboutText}>email: joana@mail.pt</Text>
+        <View style={styles.aboutTextView}>
+          <Text style={styles.aboutText}>NIF: 99999</Text>
+          <Text style={styles.aboutText}>Address: Av. Rovisco Pais 1,</Text>
+          <Text style={styles.aboutText}>1049-001 Lisboa</Text>
+          <Text style={styles.aboutText}>Phone: +351 000 0000 000</Text>
+          <Text style={styles.aboutText}>email: joana@mail.pt</Text>
+        </View>
 
         <Button
           title={"Edit Profile"}
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     borderColor: "black",
     borderWidth: 1,
-    width: 320,
+    width: 330,
   },
   buttonTitle: {
     color: "black",
@@ -85,7 +87,7 @@ const styles = StyleSheet.create({
   avatarView: {
     flexDirection: "row",
     justifyContent: "center",
-    marginBottom: 20,
+    marginBottom: 10,
   },
   tokenIcon: {},
   tokenView: {
@@ -99,6 +101,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 15,
     textAlign: "center",
+  },
+  nameText: {
+    fontSize: 27,
+    marginBottom: 2,
   },
 });
 
