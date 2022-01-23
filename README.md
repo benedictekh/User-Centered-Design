@@ -9,10 +9,10 @@ Follow the instructions, and run the [backend](https://github.com/Andre12Lopes/D
 
 To run the frontend:
 1. Clone the repository into your preferred folder 
-  '''git clone https://github.com/benedictekh/User-Centered-Design.git '''
-3. Navigate to the folder in your preferred terminal using  '''cd <folder>'''
-4. Run '''npm install'''
-5. Run '''npm start'''
+  ```git clone https://github.com/benedictekh/User-Centered-Design.git```
+3. Navigate to the folder in your preferred terminal using  ```cd <folder>```
+4. Run ```npm install```
+5. Run ```npm start```
 6. Download [Expo Go](https://expo.dev/client) on your phone from App Store or Google Play
 7. Open [localhost:19002](http://localhost:19002/) in your preferred browser.
 8. Scan the QR-code that appears in your browser to open the app on your phone.
