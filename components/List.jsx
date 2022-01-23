@@ -91,7 +91,7 @@ const shops = [
   },
 ];
 
-export function TrashcansList() {
+export function TrashcansList(props) {
   const [trashcansAPI, setTrashcanAPI] = useState([]);
   async function getTrashData() {
     axios.get("http://34.78.106.8:8080/api/trashcan/").then((response) => {
@@ -109,20 +109,25 @@ export function TrashcansList() {
         {
           console.log(item.address);
         }
-        return (
-          <Card key={item.id}>
-            <View>
-              <Card.Title style={styles.title}>{item.address}</Card.Title>
-              <Text>Distance: {item.distance}</Text>
-            </View>
-          </Card>
-        );
+        if (
+          item.adress.toUpperCase().includes(props.search.toUpperCase()) ||
+          props.search === ""
+        ) {
+          return (
+            <Card key={item.id}>
+              <View>
+                <Card.Title style={styles.title}>{item.address}</Card.Title>
+                <Text>Distance: {item.distance}</Text>
+              </View>
+            </Card>
+          );
+        }
       })}
     </ScrollView>
   );
 }
 
-export function ShopsList() {
+export function ShopsList(props) {
   let image_path = require("../assets/groceries.png");
   const [shopsAPI, setShopAPI] = useState([]);
   async function getShopData() {
@@ -138,24 +143,82 @@ export function ShopsList() {
   return (
     <ScrollView style={styles.container}>
       {shopsAPI.map((item) => {
-        return (
-          <Card key={item.id}>
-            <View style={styles.card_shops}>
-              <Image
-                source={image_path}
-                style={{ width: 40, height: 40, marginRight: 20 }}
-              ></Image>
-              <View>
-                <Card.Title style={styles.title}>{item.name}</Card.Title>
-                <Text>{item.address}</Text>
+        if (
+          item.name.toUpperCase().includes(props.search.toUpperCase()) ||
+          props.search === ""
+        ) {
+          return (
+            <Card key={item.id}>
+              <View style={styles.card_shops}>
+                <Image
+                  source={image_path}
+                  style={{ width: 40, height: 40, marginRight: 20 }}
+                ></Image>
+                <View>
+                  <Card.Title style={styles.title}>{item.name}</Card.Title>
+                  <Text>{item.address}</Text>
+                </View>
               </View>
-            </View>
-          </Card>
-        );
+            </Card>
+          );
+        }
       })}
     </ScrollView>
   );
 }
+// export function TrashcansList(props) {
+//     return (
+//         <ScrollView style={styles.container}>
+//         {trashcans.map((item, i) => {
+//             if(item.adress.toUpperCase().includes(props.search.toUpperCase()) || props.search === ''){
+//               return(
+//                 <Card key={i}>
+//                     <View>
+//                     <Card.Title style={styles.title}>{item.adress}</Card.Title>
+//                     <Text>{item.distance}</Text>
+//                     </View>
+//                 </Card>
+//             )}
+//         })}
+//         </ScrollView>
+//     );
+//   }
+
+// export function ShopsList(props) {
+//   let image_path = require('../assets/groceries.png');
+//   return (
+//       <ScrollView style={styles.container}>
+//       {shops.map((item, i) => {
+//         if(item.name.toUpperCase().includes(props.search.toUpperCase()) || props.search === ''){
+//           return(
+//             <Card key={i} >
+//                 <View style={styles.card_shops}>
+//                 <Image source={image_path} style={{width:40, height:40, marginRight:20}}></Image>
+//                 <View>
+//                     <Card.Title style={styles.title}>{item.name}</Card.Title>
+//                     <Text>{item.adress}</Text>
+//                 </View>
+//                 </View>
+//             </Card>
+//         )
+//         }
+//       })}
+//       </ScrollView>
+//   );
+// }
+
+const styles = StyleSheet.create({
+  title: {
+    textAlign: "left",
+  },
+  container: {
+    width: "100%",
+  },
+  card_shops: {
+    flex: 1,
+    flexDirection: "row",
+  },
+});
 
 const styles = StyleSheet.create({
   title: {

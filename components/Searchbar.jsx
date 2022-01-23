@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, TextInput, View, Image } from 'react-native';
 
-export default function Searchbar() {
+
+export default function Searchbar(props){
     let image_path = require('../assets/search.png');
   return (
      <View style={styles.searchfield}>
@@ -10,7 +11,8 @@ export default function Searchbar() {
         placeholder='Search'
         style={styles.formField}
         placeholderTextColor={'#888888'}
-        // onChangeText={(text) => changeText(text)}
+        value={props.search}
+        onChangeText={(text) => props.setSearch(text)}
       > 
       </TextInput>
     </View>
@@ -23,12 +25,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignContent: "center",
         margin: 5,
-        // marginLeft: 10,
         borderWidth: 1,
         padding: 12,
-        // paddingLeft: 20,
-        // paddingRight: 20,
-        // borderRadius: 20,
         borderColor: '#888888',
         height: 40,
         width: "90%"
