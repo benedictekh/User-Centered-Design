@@ -10,7 +10,6 @@ import HelpScreen from "../pages/HelpScreen";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Transactions_shops from './Profile/Transactions';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +28,7 @@ function MyTabs() {
       ></Tab.Screen>
       <Tab.Screen
         name="List"
-        component={Transactions_shops}
+        component={ListScreen}
         options={{
           tabBarLabel: "List",
           tabBarIcon: ({ color, size }) => (

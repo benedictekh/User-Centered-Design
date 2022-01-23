@@ -1,6 +1,7 @@
 import { Card, Button } from 'react-native-elements'
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useState } from 'react';
 
 
@@ -92,7 +93,7 @@ function Transactions_shops() {
     const [showTrashcans, setShowTrashcans] = useState(true);
     return(
         <ScrollView>
-            <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'center', marginTop: 15}}>
+            <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'center', marginTop: 50}}>
             <Button
                 title={'Trashcans'}
                 buttonStyle={
