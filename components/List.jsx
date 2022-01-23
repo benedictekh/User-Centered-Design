@@ -1,4 +1,4 @@
-import { ListItem, Icon, Card } from 'react-native-elements'
+import { Card } from 'react-native-elements'
 import { Text, View, ScrollView, StyleSheet, Image } from 'react-native';
 
 
@@ -83,39 +83,44 @@ const shops = [
     }
   ]
 
-export function TrashcansList() {
+export function TrashcansList(props) {
     return (
         <ScrollView style={styles.container}>
         {trashcans.map((item, i) => {
-            return(
+            if(item.adress.toUpperCase().includes(props.search.toUpperCase()) || props.search === ''){
+              return(
                 <Card key={i}>
                     <View>
                     <Card.Title style={styles.title}>{item.adress}</Card.Title>
                     <Text>{item.distance}</Text>
                     </View>
-            </Card>
-            )
+                </Card>
+            )}
         })}
         </ScrollView>
     );
   }
+
+
   
-  export function ShopsList() {
+  export function ShopsList(props) {
     let image_path = require('../assets/groceries.png');
     return (
         <ScrollView style={styles.container}>
         {shops.map((item, i) => {
+          if(item.name.toUpperCase().includes(props.search.toUpperCase()) || props.search === ''){
             return(
-                <Card key={i} >
-                    <View style={styles.card_shops}>
-                    <Image source={image_path} style={{width:40, height:40, marginRight:20}}></Image>
-                    <View>
-                        <Card.Title style={styles.title}>{item.name}</Card.Title>
-                        <Text>{item.adress}</Text>
-                    </View>
-                    </View>
-                </Card>
-            )
+              <Card key={i} >
+                  <View style={styles.card_shops}>
+                  <Image source={image_path} style={{width:40, height:40, marginRight:20}}></Image>
+                  <View>
+                      <Card.Title style={styles.title}>{item.name}</Card.Title>
+                      <Text>{item.adress}</Text>
+                  </View>
+                  </View>
+              </Card>
+          )
+          }
         })}
         </ScrollView>
     );
@@ -132,7 +137,6 @@ export function TrashcansList() {
         flex: 1,
         flexDirection: "row",
     }
-
   });
   
 
