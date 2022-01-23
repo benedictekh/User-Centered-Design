@@ -14,6 +14,8 @@ To run the frontend:
 4. Run ```npm install```
 5. Run ```npm start```
 6. Download [Expo Go](https://expo.dev/client) on your phone from App Store or Google Play
-7. Open [localhost:19002](http://localhost:19002/) in your preferred browser and scan the QR-code that appears in your browser to open the app on your phone.
-    OR
-    Scan the QR-code directly from your terminal.
+7. Two options:
+  - Open [localhost:19002](http://localhost:19002/) in your preferred browser and scan the QR-code that appears in your browser to open the app on your phone.
+  - OR Scan the QR-code directly from your terminal to open the app.
+
+It is important that your phone and laptop is connected to the same network!
