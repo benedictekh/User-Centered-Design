@@ -83,13 +83,11 @@ export default function ListScreen() {
                     <Image 
                     source={image_path_map_trashcans} 
                     style={{width:400, height:540, marginRight: 20}}
-                    onPress={() => console.log('pressed map')}
                     ></Image> 
                     : 
                     <Image 
                     source={image_path_map_shops} 
                     style={{width:400, height:540, marginRight: 20}}
-                    onPress={() => console.log('pressed map')}
                     ></Image>
                 }
             </View>
