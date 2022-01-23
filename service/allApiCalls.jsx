@@ -8,9 +8,13 @@ import { api } from "./api";
  * @returns all trashcans
  */
 export const getAllTrashcans = async () => {
-  return api.get(`trashcan/`).then((response) => {
-    return response.data;
-  });
+  console.log("trying to get trashcans");
+  return api
+    .get(`trashcan/`)
+    .then((response) => {
+      return response.data;
+    })
+    .catch(() => console.log("hello"));
 };
 
 /**
