@@ -2,7 +2,7 @@ import { ListItem, Icon, Card } from "react-native-elements";
 import { Text, View, ScrollView, StyleSheet, Image } from "react-native";
 
 import { getAllTrashcans, getAllShops } from "../service/allApiCalls";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const trashcans = [
@@ -91,37 +91,34 @@ const shops = [
   },
 ];
 
-function setTrahcans(list) {
-  trashcansAPI = list;
-  console.log(JSON.parse(trashcansAPI)[0]);
-}
-
-async function getTrashData() {
-  axios.get("http://34.78.106.8:8080/api/trashcan/").then((response) => {
-    let list = response.data;
-    //setTrahcans(JSON.stringify(list));
-    trashcansAPI = JSON.stringify(list);
-    //console.log(trashcansAPI);
-  });
-}
-
-let trashcansAPI = [];
-
 export function TrashcansList() {
-  getTrashData().then(console.log("waited"));
+  const [trashcansAPI, setTrashcanAPI] = useState([]);
+  async function getTrashData() {
+    axios.get("http://34.78.106.8:8080/api/trashcan/").then((response) => {
+      setTrashcanAPI(response.data);
+    });
+  }
 
-  console.log("bef return");
-  console.log("array " + trashcansAPI);
+  useEffect(() => {
+    getTrashData();
+  }, []);
+
+  //console.log("array " + trashcansAPI);
 
   return (
     <ScrollView style={styles.container}>
       {trashcansAPI.map((item) => {
-        <Card key={item.id}>
-          <View>
-            <Card.Title style={styles.title}>{item.address}</Card.Title>
-            <Text>{item.distance}</Text>
-          </View>
-        </Card>;
+        {
+          console.log(item.address);
+        }
+        return (
+          <Card key={item.id}>
+            <View>
+              <Card.Title style={styles.title}>{item.address}</Card.Title>
+              <Text>Distance: {item.distance}</Text>
+            </View>
+          </Card>
+        );
       })}
     </ScrollView>
   );
