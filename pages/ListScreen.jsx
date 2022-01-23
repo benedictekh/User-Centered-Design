@@ -113,12 +113,12 @@ export default function ListScreen() {
         ) : !trashcanStatus ? (
           <Image
             source={image_path_map_trashcans}
-            style={{ width: 500, height: 700, marginRight: 20 }}
+            style={{ width: 500, height: 600, marginRight: 20 }}
           ></Image>
         ) : (
           <Image
             source={image_path_map_shops}
-            style={{ width: 500, height: 700, marginRight: 20 }}
+            style={{ width: 500, height: 600, marginRight: 20 }}
           ></Image>
         )}
       </View>

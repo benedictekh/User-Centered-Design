@@ -121,47 +121,6 @@ const PersonalInfo = () => {
   );
 };
 
-let shop_transactions = [
-  {
-    place: "Pingo Doce",
-    date: "15/12/2021",
-    tokenAmount: "-1.0",
-  },
-  {
-    place: "100 Montaditos",
-    date: "05/12/2021",
-    tokenAmount: "-2.5",
-  },
-];
-
-let trashcan_transactions = [
-  {
-    place: "Arco do Cego",
-    date: "13/12/2021",
-    tokenAmount: "0.3",
-  },
-  {
-    place: "Bairro Alto",
-    date: "11/12/2021",
-    tokenAmount: "0.1",
-  },
-  {
-    place: "Alameda",
-    date: "05/12/2021",
-    tokenAmount: "0.4",
-  },
-  {
-    place: "Anjos",
-    date: "05/12/2021",
-    tokenAmount: "0.3",
-  },
-  {
-    place: "Martim Moniz",
-    date: "01/12/2021",
-    tokenAmount: "0.1",
-  },
-];
-
 function Transactions_shops() {
   const [transactionsShopAPI, setTransactionsShopAPI] = useState([]);
   async function getTransactionShopData() {
