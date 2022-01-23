@@ -59,8 +59,8 @@ const PersonalInfo = () => {
       </Card>
     </View>
     :
-    <ScrollView>
-      <Ionicons name="arrow-back" style={{marginLeft: -5}} size={35} onPress={() => setShowProfile(true)}></Ionicons>
+    <ScrollView style={{width: "100%"}}>
+      <Ionicons name="arrow-back" style={{marginLeft: 8, marginTop: 5}} size={35} onPress={() => setShowProfile(true)}></Ionicons>
       <View style={{ flex: 1, flexDirection: 'row',  alignItems: 'center', justifyContent: 'center'}}>
         <Button
           title={'Trashcans'}
