@@ -5,13 +5,13 @@ import {TrashcansList, ShopsList} from '../components/List';
 import Searchbar from '../components/Searchbar';
 import Feather from 'react-native-vector-icons/Feather';
 
-
 export default function ListScreen() {
     let image_path_map_trashcans = require('../assets/map_trashcans.png');
     let image_path_map_shops = require('../assets/map_shops.png');
 
     const [trashcanStatus, setTrashcanStatus] = useState(false);
     const [showList, setShowList] = useState(true);
+    const [search, setSearch] = useState('')
 
     return (
         <ScrollView>
@@ -75,25 +75,23 @@ export default function ListScreen() {
          
             </View>
             <View style={{ flex: 1, flexDirection: 'column',  alignItems: 'center', justifyContent: 'center' }}> 
-                <Searchbar />
+                <Searchbar search={search} setSearch={setSearch} />
                 {showList?
-                    !trashcanStatus ? <TrashcansList /> : <ShopsList />
+                    !trashcanStatus ? <TrashcansList search={search} /> : <ShopsList search={search} />
                     :
                     !trashcanStatus ? 
                     <Image 
                     source={image_path_map_trashcans} 
                     style={{width:400, height:540, marginRight: 20}}
-                    onPress={() => console.log('pressed map')}
                     ></Image> 
                     : 
                     <Image 
                     source={image_path_map_shops} 
                     style={{width:400, height:540, marginRight: 20}}
-                    onPress={() => console.log('pressed map')}
                     ></Image>
                 }
             </View>
         </ScrollView>
     );
   }
-  
+ 
