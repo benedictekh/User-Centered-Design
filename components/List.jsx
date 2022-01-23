@@ -103,8 +103,6 @@ export function TrashcansList() {
     getTrashData();
   }, []);
 
-  //console.log("array " + trashcansAPI);
-
   return (
     <ScrollView style={styles.container}>
       {trashcansAPI.map((item) => {
@@ -126,11 +124,22 @@ export function TrashcansList() {
 
 export function ShopsList() {
   let image_path = require("../assets/groceries.png");
+  const [shopsAPI, setShopAPI] = useState([]);
+  async function getShopData() {
+    axios.get("http://34.78.106.8:8080/api/shop/").then((response) => {
+      setShopAPI(response.data);
+    });
+  }
+
+  useEffect(() => {
+    getShopData();
+  }, []);
+
   return (
     <ScrollView style={styles.container}>
-      {shops.map((item, i) => {
+      {shopsAPI.map((item) => {
         return (
-          <Card key={i}>
+          <Card key={item.id}>
             <View style={styles.card_shops}>
               <Image
                 source={image_path}
@@ -138,7 +147,7 @@ export function ShopsList() {
               ></Image>
               <View>
                 <Card.Title style={styles.title}>{item.name}</Card.Title>
-                <Text>{item.adress}</Text>
+                <Text>{item.address}</Text>
               </View>
             </View>
           </Card>
