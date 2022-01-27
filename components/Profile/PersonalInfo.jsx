@@ -8,6 +8,19 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import axios from "axios";
 
 const PersonalInfo = () => {
+  const [personalInfoApi, setPersonalDataApi] = useState([]);
+
+  async function getPersonalData() {
+    axios.get("http://34.78.106.8:8080/api/user/1").then((response) => {
+      setPersonalDataApi(response.data);
+    });
+  }
+
+  useEffect(() => {
+    getPersonalData();
+  }, []);
+
+  console.log(personalInfoApi.tokens)
   const [showProfile, setShowProfile] = useState(true);
   const [showTrashcans, setShowTrashcans] = useState(true);
   return showProfile ? (
@@ -24,11 +37,11 @@ const PersonalInfo = () => {
           ></Avatar>
         </View>
         <View style={styles.aboutTextView}>
-          <Text style={styles.aboutText}>NIF: 99999</Text>
+          <Text style={styles.aboutText}>NIF: {personalInfoApi.nif}</Text>
           <Text style={styles.aboutText}>Address: Av. Rovisco Pais 1,</Text>
           <Text style={styles.aboutText}>1049-001 Lisboa</Text>
           <Text style={styles.aboutText}>Phone: +351 000 0000 000</Text>
-          <Text style={styles.aboutText}>email: joana@mail.pt</Text>
+          <Text style={styles.aboutText}>email: {personalInfoApi.email}</Text>
         </View>
 
         <Button
@@ -41,7 +54,7 @@ const PersonalInfo = () => {
         <Text style={styles.tokenText}>Your Tokens</Text>
         <View style={styles.tokenView}>
           <FontAwesome5 name="coins" size={60} />
-          <Text style={styles.tokenText}>= 20</Text>
+          <Text style={styles.tokenText}>= {personalInfoApi.tokens}</Text>
         </View>
         <Button
           title={"Transaction History"}
