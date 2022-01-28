@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ListScreen from '../pages/ListScreen';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ListScreen from "../pages/ListScreen";
 import ProfileScreen from "../pages/ProfileScreen";
 import HomeScreen from "../pages/HomeScreen";
 import HelpScreen from "../pages/HelpScreen";
@@ -27,10 +27,10 @@ function MyTabs() {
         }}
       ></Tab.Screen>
       <Tab.Screen
-        name="List"
+        name="Trashcans and Shops"
         component={ListScreen}
         options={{
-          tabBarLabel: "List",
+          tabBarLabel: "Locations",
           tabBarIcon: ({ color, size }) => (
             <SimpleLineIcons name="location-pin" color={color} size={size} />
           ),

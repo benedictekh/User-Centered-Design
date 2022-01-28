@@ -20,7 +20,7 @@ const PersonalInfo = () => {
     getPersonalData();
   }, []);
 
-  console.log(personalInfoApi.tokens)
+  console.log(personalInfoApi.tokens);
   const [showProfile, setShowProfile] = useState(true);
   const [showTrashcans, setShowTrashcans] = useState(true);
   return showProfile ? (
@@ -54,7 +54,9 @@ const PersonalInfo = () => {
         <Text style={styles.tokenText}>Your Tokens</Text>
         <View style={styles.tokenView}>
           <FontAwesome5 name="coins" size={60} />
-          <Text style={styles.tokenText}>= {personalInfoApi.tokens}</Text>
+          <Text style={styles.tokenText}>
+            = {Math.round(personalInfoApi.tokens)}
+          </Text>
         </View>
         <Button
           title={"Transaction History"}
